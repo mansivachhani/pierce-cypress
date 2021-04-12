@@ -25,4 +25,4 @@ yarn || npm cypress:open
 
 ## Result from running test locally
 
-![Snapshot from running tests locally](https://ibb.co/5v2JYSx)
+![Snapshot from running tests locally](https://i.ibb.co/ftQT8yG/Screen-Shot-2021-04-12-at-8-47-24-AM.png)
