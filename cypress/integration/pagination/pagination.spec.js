@@ -1,11 +1,10 @@
 import Pagination from "../../page-objects/pagination";
 
 const DOMAINS = ['https://www.24mx.ie', 'https://www.24mx.pl'];
+const pagination = new Pagination();
 
 DOMAINS.forEach((domain) => {
-
     describe(`${domain}: Test Pagination feature`, () => {
-        const pagination = new Pagination();
         beforeEach(() => {
             cy.viewport('macbook-16')
             cy.setCookie('GDPR', 'true');
@@ -38,5 +37,4 @@ DOMAINS.forEach((domain) => {
             cy.url().should('contain', '/outlet?page=3');
         });
     });
-
 });

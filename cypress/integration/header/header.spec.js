@@ -1,7 +1,7 @@
 import Header from "../../page-objects/header";
+const header = new Header();
 
-describe("24mx.ie - Check the header of the website in desktop viewport", () => {
-    const header = new Header();
+describe("https://www.24mx.ie/ - Check the header of the website in desktop viewport", () => {
     beforeEach(() => {
         cy.viewport('macbook-16');
         cy.setCookie('GDPR', 'true');
@@ -16,18 +16,17 @@ describe("24mx.ie - Check the header of the website in desktop viewport", () => 
 
     it('Check main navigation and its respective submenu', function () {
         header.getMenu().contains("Motocross Gear").click();
-        cy.get('.o-navigation-submenu:first-of-type').should('be.visible').contains("Motocross Clothing");
+        header.getSubMenuSelector().should('be.visible').contains("Motocross Clothing");
         header.getMenu().contains("Motocross Parts").click();
-        cy.get('.o-navigation-submenu').should('be.visible').contains("Exhaust Systems");
+        header.getSubMenuSelector().should('be.visible').contains("Exhaust Systems");
         header.getMenu().contains("Motocross Accessories").click();
-        cy.get('.o-navigation-submenu').should('be.visible').contains("Tools");
+        header.getSubMenuSelector().should('be.visible').contains("Tools");
         header.getMenu().contains("Streetwear").click();
-        cy.get('.o-navigation-submenu').should('be.visible').contains("Bags");
+        header.getSubMenuSelector().should('be.visible').contains("Bags");
     });
 });
 
-describe("24mx.pl - Check the header of the website in desktop viewport", () => {
-    const header = new Header();
+describe("https://www.24mx.pl/ - Check the header of the website in desktop viewport", () => {
     beforeEach(() => {
         cy.viewport('macbook-16')
         cy.setCookie('GDPR', 'true');
@@ -44,10 +43,10 @@ describe("24mx.pl - Check the header of the website in desktop viewport", () => 
         header.getMenu().contains("Wyposażenie MX").click();
         cy.get('.o-navigation-submenu:first-of-type').should('be.visible').contains("Kaski");
         header.getMenu().contains("Części MX").click();
-        cy.get('.o-navigation-submenu').should('be.visible').contains("Klocki Hamulcowe");
+        header.getSubMenuSelector().should('be.visible').contains("Klocki Hamulcowe");
         header.getMenu().contains("Akcesoria MX").click();
-        cy.get('.o-navigation-submenu').should('be.visible').contains("Akcesoria MX");
+        header.getSubMenuSelector().should('be.visible').contains("Akcesoria MX");
         header.getMenu().contains("Odzież Codzienna").click();
-        cy.get('.o-navigation-submenu').should('be.visible').contains("Akcesoria");
+        header.getSubMenuSelector().should('be.visible').contains("Akcesoria");
     });
 });
