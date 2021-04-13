@@ -10,5 +10,9 @@ class Header {
     getSearchElement() {
         return cy.get('p-search-input[inputid="search-desktop"]').find('input[type="search"]');
     }
+
+    getSubMenuSelector() {
+        return cy.get('.o-navigation-submenu');
+    }
 }
 export default Header
